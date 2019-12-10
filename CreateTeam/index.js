@@ -36,6 +36,7 @@ module.exports = async function (context, myQueueItem) {
                         displayName, description, owner);
                 })
                 .then((templateString) => {
+                    context.log(`Getting Template ${templateString}`);
                     return createTeam(context, token, templateString);
                 })
                 .then((teamId) => {
